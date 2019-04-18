@@ -78,3 +78,7 @@ Else
 	
 End if 
 ```
+
+### References
+
+https://forums.4d.com/Post/FR/2634499/1/2634860#2634860
