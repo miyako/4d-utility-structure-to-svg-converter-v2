@@ -13,6 +13,21 @@ Create visual image of 4D structure (SVG or PDF)
 
 <img src="https://user-images.githubusercontent.com/1725068/41266195-ddf767b2-6e30-11e8-9d6b-2adf6a9f57a5.png" width="32" height="32" />
 
+* new: using new field type icons (can be toggle with xsl param ``use_icon_v2``)
+
+* fixed: invisible fields and table are now redenred italic
+
+* new: method to highlight a table or relation
+
+<img width="537" alt="スクリーンショット 2019-05-24 9 25 58" src="https://user-images.githubusercontent.com/1725068/58294625-1e9cb200-7e06-11e9-85ff-edc40dfe0ccb.png">
+
+```
+focus_structure_element ("structure";"tableName")
+focus_structure_element ("structure";"tableName";"relationName")
+```
+
+either the 1toN or Nto1 relation name can be specified
+
 ### Usage
 
 ```
