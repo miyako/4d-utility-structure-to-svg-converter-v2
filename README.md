@@ -19,7 +19,7 @@ Create visual image of 4D structure (SVG or PDF)
 
 * new: method to highlight a table or relation
 
-<img width="537" alt="スクリーンショット 2019-05-24 9 25 58" src="https://user-images.githubusercontent.com/1725068/58295437-36763500-7e0a-11e9-824f-4d16cef9e1a0.png">
+<img width="540" alt="スクリーンショット 2019-05-24 9 55 13" src="https://user-images.githubusercontent.com/1725068/58295452-4d1c8c00-7e0a-11e9-88e6-3e3504cf707f.png">
 
 ```
 focus_structure_element ("structure";"tableName")
