@@ -948,6 +948,7 @@
             
             <xsl:variable name="gradient_start_red">
                 <xsl:choose>
+                    <xsl:when test="string(number(./table_extra/editor_table_info/color/@alpha))=0">127</xsl:when>
                     <xsl:when test="string(number(./table_extra/editor_table_info/color/@red))='NaN'">127</xsl:when>
                     <xsl:when test="number(./table_extra/editor_table_info/color/@red * $table_start_brightness) &gt; 255">
                         <xsl:value-of select="255" />
@@ -960,6 +961,7 @@
             
             <xsl:variable name="gradient_start_green">
                 <xsl:choose>
+                    <xsl:when test="string(number(./table_extra/editor_table_info/color/@alpha))=0">127</xsl:when>
                     <xsl:when test="string(number(./table_extra/editor_table_info/color/@green))='NaN'">127</xsl:when>
                     <xsl:when test="number(./table_extra/editor_table_info/color/@green * $table_start_brightness) &gt; 255">
                         <xsl:value-of select="255" />
@@ -972,6 +974,7 @@
             
             <xsl:variable name="gradient_start_blue">
                 <xsl:choose>
+                    <xsl:when test="string(number(./table_extra/editor_table_info/color/@alpha))=0">127</xsl:when>
                     <xsl:when test="string(number(./table_extra/editor_table_info/color/@blue))='NaN'">127</xsl:when>
                     <xsl:when test="number(./table_extra/editor_table_info/color/@blue * $table_start_brightness) &gt; 255">
                         <xsl:value-of select="255" />
@@ -1208,7 +1211,7 @@
                         <xsl:if test="@uuid = $source_field_id">
                             <xsl:choose>
                                 <xsl:when test="($source_top + (position() * $table_row_height)) &lt; $source_bottom">
-                                    <xsl:value-of select="string($source_top + (position() * $table_row_height))" />
+                                    <xsl:value-of select="string(5.5 + 5.5 + 5.5 + $source_top + (position() * $table_row_height))" />
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <xsl:value-of select="$source_bottom + 2" />
@@ -1365,6 +1368,9 @@
                 
                 <xsl:variable name="source_red">
                     <xsl:choose>
+                        <xsl:when test="string(number(key( 'table_by_uuid', $source_table_id )/table_extra/editor_table_info/color/@alpha)) = 0 ">
+                            <xsl:value-of select="$table_default_start_red" />
+                        </xsl:when>
                         <xsl:when test="string(number(key( 'table_by_uuid', $source_table_id )/table_extra/editor_table_info/color/@red)) = 'NaN' ">
                             <xsl:value-of select="$table_default_start_red" />
                         </xsl:when>
@@ -1379,6 +1385,9 @@
                 
                 <xsl:variable name="source_green">
                     <xsl:choose>
+                        <xsl:when test="string(number(key( 'table_by_uuid', $source_table_id )/table_extra/editor_table_info/color/@alpha)) = 0 ">
+                            <xsl:value-of select="$table_default_start_green" />
+                        </xsl:when>
                         <xsl:when test="string(number(key( 'table_by_uuid', $source_table_id )/table_extra/editor_table_info/color/@green)) = 'NaN' ">
                             <xsl:value-of select="$table_default_start_green" />
                         </xsl:when>
@@ -1393,6 +1402,9 @@
                 
                 <xsl:variable name="source_blue">
                     <xsl:choose>
+                        <xsl:when test="string(number(key( 'table_by_uuid', $source_table_id )/table_extra/editor_table_info/color/@alpha)) = 0 ">
+                            <xsl:value-of select="$table_default_start_blue" />
+                        </xsl:when>
                         <xsl:when test="string(number(key( 'table_by_uuid', $source_table_id )/table_extra/editor_table_info/color/@blue)) = 'NaN' ">
                             <xsl:value-of select="$table_default_start_blue" />
                         </xsl:when>
@@ -1407,6 +1419,9 @@
                 
                 <xsl:variable name="destination_red">
                     <xsl:choose>
+                        <xsl:when test="string(number(key( 'table_by_uuid', $destination_table_id )/table_extra/editor_table_info/color/@alpha)) = 0 ">
+                            <xsl:value-of select="$table_default_stop_red" />
+                        </xsl:when>
                         <xsl:when test="string(number(key( 'table_by_uuid', $destination_table_id )/table_extra/editor_table_info/color/@red)) = 'NaN' ">
                             <xsl:value-of select="$table_default_stop_red" />
                         </xsl:when>
@@ -1421,6 +1436,9 @@
                 
                 <xsl:variable name="destination_green">
                     <xsl:choose>
+                        <xsl:when test="string(number(key( 'table_by_uuid', $destination_table_id )/table_extra/editor_table_info/color/@alpha)) = 0 ">
+                            <xsl:value-of select="$table_default_stop_green" />
+                        </xsl:when>
                         <xsl:when test="string(number(key( 'table_by_uuid', $destination_table_id )/table_extra/editor_table_info/color/@green)) = 'NaN' ">
                             <xsl:value-of select="$table_default_stop_green" />
                         </xsl:when>
@@ -1435,6 +1453,9 @@
                 
                 <xsl:variable name="destination_blue">
                     <xsl:choose>
+                        <xsl:when test="string(number(key( 'table_by_uuid', $destination_table_id )/table_extra/editor_table_info/color/@alpha)) = 0 ">
+                            <xsl:value-of select="$table_default_stop_blue" />
+                        </xsl:when>
                         <xsl:when test="string(number(key( 'table_by_uuid', $destination_table_id )/table_extra/editor_table_info/color/@blue)) = 'NaN' ">
                             <xsl:value-of select="$table_default_stop_blue" />
                         </xsl:when>
