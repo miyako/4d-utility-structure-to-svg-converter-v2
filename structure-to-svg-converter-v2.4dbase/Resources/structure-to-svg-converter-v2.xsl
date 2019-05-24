@@ -29,7 +29,8 @@
     <xsl:param name="translate_x" select="5" />
     <xsl:param name="translate_y" select="5" />
     
-    <xsl:param name="structure_font_family" select="'Arial'" />
+<!--    <xsl:param name="structure_font_family" select="'Arial'" />-->
+<xsl:param name="structure_font_family" select="'メイリオ'" />
     <xsl:param name="structure_font_size" select="12" />
     <xsl:param name="structure_font_weight" select="'normal'" />
     <xsl:param name="structure_margin_x" select="100" />
