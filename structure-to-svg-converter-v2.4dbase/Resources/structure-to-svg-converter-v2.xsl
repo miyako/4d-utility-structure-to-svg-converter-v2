@@ -1155,8 +1155,12 @@
     
     <!-- draw relation lines -->
     <xsl:template match="//relation">
-        <svg:g uuid="{concat(@uuid,'.1toN')}" filter="none" id="{concat(./related_field[@kind = 'destination']/field_ref/table_ref/@name,'.',@name_1toN)}">
-            <svg:g uuid="{concat(@uuid,'.Nto1')}" filter="none" id="{concat(./related_field[@kind = 'source']/field_ref/table_ref/@name,'.',@name_Nto1)}">
+        <svg:g uuid="{concat(@uuid,'.1toN')}" filter="none"
+            id="{concat(./related_field[@kind = 'destination']/field_ref/table_ref/@name,'.',@name_1toN)}"
+            data-kind="{name()}">
+            <svg:g uuid="{concat(@uuid,'.Nto1')}" filter="none"
+                id="{concat(./related_field[@kind = 'source']/field_ref/table_ref/@name,'.',@name_Nto1)}"
+                data-kind="{name()}">
                 <xsl:variable name="source_table_id">
                     <xsl:value-of select="./related_field[@kind = 'source']/field_ref/table_ref/@uuid" />
                 </xsl:variable>
@@ -1582,7 +1586,9 @@
     </xsl:template>
     <!-- draw a table -->
     <xsl:template match="//table">
-        <svg:g uuid="{@uuid}" id="{concat('ds.', @name)}" filter="none" table-id="{@id}">
+        <svg:g uuid="{@uuid}" id="{concat('ds.', @name)}" filter="none"
+            data-kind="{name(.)}"
+            data-number="{@id}">
             <xsl:variable name="coordinates_top">
                 <xsl:value-of select="./table_extra/editor_table_info/coordinates/@top" />
             </xsl:variable>
