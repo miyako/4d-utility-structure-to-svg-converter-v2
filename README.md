@@ -13,7 +13,7 @@ Create visual image of 4D structure (SVG or PDF)
 
 <img src="https://user-images.githubusercontent.com/1725068/41266195-ddf767b2-6e30-11e8-9d6b-2adf6a9f57a5.png" width="32" height="32" />
 
-* new: using new field type icons (can be toggle with xsl param ``use_icon_v2``)
+* new: using new field type icons (toggle with xsl param ``use_icon_v2``)
 
 * fixed: invisible fields and table are now redenred italic
 
